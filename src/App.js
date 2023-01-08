@@ -6,6 +6,7 @@ function App() {
   return (
     <div className="App" className="App-Bg-Div">
       <img src={background} className="App-bg" />
+      <h1 className="App-title">Wedding Party</h1>
     </div>
   );
 }
