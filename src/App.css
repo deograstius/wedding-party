@@ -1,6 +1,6 @@
 body {
   background-color: black;
-  height:  100vh;
+  height: 100vh;
 }
 .App {
   text-align: center;
@@ -34,13 +34,20 @@ body {
 }
 
 .App-title {
-  color: #B2AC88;
+  color: #b2ac88;
   position: absolute;
-  font-family: 'Abril Fatface', cursive;
+  font-family: "Abril Fatface", cursive;
   width: 100vw;
   text-align: left;
   top: 20px;
   left: 40px;
+}
+.poppy-App-bg {
+  background-color: #000;
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
 }
 
 .App-link {
