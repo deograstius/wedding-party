@@ -30,7 +30,7 @@ body {
   position: absolute;
   font-family: 'Abril Fatface', cursive;
   text-align: left;
-  top: 10vw;
+  top: 5vh;
   left: 10vw;
   right: 10vw;
   height: 10vh;
@@ -40,18 +40,48 @@ body {
   background-color: green;
   position: absolute;
   text-align: left;
-  top: 20vh;
+  top: 15vh;
   left: 10vw;
   right: 10vw;
   bottom: 10vw;
   overflow: scroll;
 }
+
 .poppy-App-bg {
   background-color: #000;
   color: white;
   width: 100vw;
   height: 100vh;
   object-fit: cover;
+}
+
+.App-cell {
+  background-color: aquamarine;
+  color: white;
+  width: 70vw;
+  height: 10vh;
+}
+.App-cell-title {
+  background-color: red;
+  color: white;
+  width: 70vw;
+  height: 3vh;
+  font-size: small;
+}
+.App-cell-desc {
+  background-color: purple;
+  color: white;
+  width: 70vw;
+  height: 3vh;
+  font-size: small;
+}
+
+.App-cell-datetime {
+  background-color: green;
+  color: white;
+  width: 70vw;
+  height: 3vh;
+  font-size: small;
 }
 
 .App-link {

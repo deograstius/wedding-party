@@ -4,6 +4,8 @@ import groom_background from "./backgrounds/tall_scotch_bottle.jpg";
 import bride_background from "./backgrounds/champagne.jpg";
 import "./App.css";
 
+const TITLE = "Wedding Party";
+
 const events = [
   {
     title: "Lorem ipsum 1",
@@ -27,8 +29,15 @@ const events = [
   },
 ];
 
-function Cell(item) {
-  return <h1>{item.title}</h1>;
+function Cell(event) {
+  console.log(event.item.title);
+  return (
+    <div className="App-cell">
+      <h3 className="App-cell-title">{event.item.title}</h3>
+      <p className="App-cell-desc">{event.item.desc}</p>
+      <p className="App-cell-datetime">{event.item.time}</p>
+    </div>
+  );
 }
 
 const WEDDING_PARTY_TYPES = {
@@ -64,12 +73,10 @@ function App() {
         className={getBackgroundClassName()}
         alt="bg"
       />
-      <h1 className="App-title">Wedding Party</h1>
+      <h1 className="App-title">{TITLE}</h1>
       <h1 className="App-list">
-        {events.map((item, index) => (
-          <h1 key={index} item={item}>
-            {item.title}
-          </h1>
+        {events.map((event, index) => (
+          <Cell Key={index} item={event}></Cell>
         ))}
       </h1>
     </div>
