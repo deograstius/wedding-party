@@ -58,8 +58,12 @@ function getBackgroundClassName() {
 
 function App() {
   return (
-    <div className="App" className="App-Bg-Div">
-      <img src={getBackground()} className={getBackgroundClassName()} />
+    <div className="App-Bg-Div">
+      <img
+        src={getBackground()}
+        className={getBackgroundClassName()}
+        alt="bg"
+      />
       <h1 className="App-title">Wedding Party</h1>
       <h1 className="App-list">
         {events.map((item, index) => (
