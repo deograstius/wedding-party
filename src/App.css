@@ -46,6 +46,13 @@ body {
   bottom: 10vw;
   overflow: scroll;
 }
+.poppy-App-bg {
+  background-color: #000;
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
 
 .App-link {
   color: #61dafb;
