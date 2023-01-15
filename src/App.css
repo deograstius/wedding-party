@@ -1,12 +1,26 @@
 body {
-  background-color: black;
-  height:  100vh;
+  background-image: url("backgrounds/golden_champagne.jpeg");
+  background-color: #fff;
+  height: 100vh;
   overflow-y: hidden;
 }
-.App {
-  text-align: center;
-  justify-content: center;
-  background-color: #000;
+.brides-party-bg {
+  background-image: url("backgrounds/pink_champagne.jpeg");
+  background-color: #fff;
+  height: 100vh;
+  overflow-y: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.grooms-party-bg {
+  background-image: url("backgrounds/scotch_and_cigar.jpeg");
+  background-color: #fff;
+  height: 100vh;
+  overflow-y: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .App-Bg-Div {
@@ -25,10 +39,9 @@ body {
 }
 
 .App-title {
-  color: #B2AC88;
-  background-color: red;
+  color: #b2ac88;
   position: absolute;
-  font-family: 'Abril Fatface', cursive;
+  font-family: "Abril Fatface", cursive;
   text-align: left;
   top: 5vh;
   left: 10vw;
@@ -37,7 +50,6 @@ body {
 }
 
 .App-list {
-  background-color: green;
   position: absolute;
   text-align: left;
   top: 15vh;
@@ -60,17 +72,19 @@ body {
   color: white;
   width: 70vw;
   height: 10vh;
+  position: flex;
+  align-items: flex-start;
 }
+
 .App-cell-title {
   background-color: red;
-  color: white;
   width: 70vw;
   height: 3vh;
   font-size: small;
 }
+
 .App-cell-desc {
   background-color: purple;
-  color: white;
   width: 70vw;
   height: 3vh;
   font-size: small;
@@ -78,7 +92,6 @@ body {
 
 .App-cell-datetime {
   background-color: green;
-  color: white;
   width: 70vw;
   height: 3vh;
   font-size: small;

@@ -8,21 +8,25 @@ const TITLE = "Wedding Party";
 
 const events = [
   {
+    key: 0,
     title: "Lorem ipsum 1",
     desc: "Lorem ipsum dolor sit amet",
     time: "02-05-2023",
   },
   {
+    key: 1,
     title: "Lorem ipsum 2",
     desc: "Lorem ipsum dolor sit amet",
     time: "02-05-2023",
   },
   {
+    key: 2,
     title: "Lorem ipsum 3",
     desc: "Lorem ipsum dolor sit amet",
     time: "02-05-2023",
   },
   {
+    key: 3,
     title: "Lorem ipsum 4",
     desc: "Lorem ipsum dolor sit amet",
     time: "02-05-2023",
@@ -30,7 +34,7 @@ const events = [
 ];
 
 function Cell(event) {
-  console.log(event.item.title);
+  console.log(event.item);
   return (
     <div className="App-cell">
       <h3 className="App-cell-title">{event.item.title}</h3>
@@ -59,9 +63,9 @@ function getBackground() {
 function getBackgroundClassName() {
   switch (WEDDING_PARTY) {
     case WEDDING_PARTY_TYPES.BRIDE:
-      return "poppy-App-bg";
+      return "brides-party-bg";
     default:
-      return "App-bg";
+      return "grooms-party-bg";
   }
 }
 
@@ -74,11 +78,11 @@ function App() {
         alt="bg"
       />
       <h1 className="App-title">{TITLE}</h1>
-      <h1 className="App-list">
+      <div className="App-list">
         {events.map((event, index) => (
-          <Cell Key={index} item={event}></Cell>
+          <Cell key={index} item={event}></Cell>
         ))}
-      </h1>
+      </div>
     </div>
   );
 }
