@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import background from "./backgrounds/tall_scotch_bottle.jpg";
-import groom_background from "./backgrounds/tall_scotch_bottle.jpg";
-import bride_background from "./backgrounds/champagne.jpg";
 import "./App.css";
 
 const events = [
@@ -38,35 +36,33 @@ const WEDDING_PARTY_TYPES = {
 
 const WEDDING_PARTY = WEDDING_PARTY_TYPES.BRIDE;
 
-function getBackground() {
+function getClassNames() {
   switch (WEDDING_PARTY) {
     case WEDDING_PARTY_TYPES.BRIDE:
-      return bride_background;
+      return {
+        background: "brides-party-bg",
+        title: "brides-party-title",
+      };
     default:
-      return groom_background;
-  }
-}
-
-function getBackgroundClassName() {
-  switch (WEDDING_PARTY) {
-    case WEDDING_PARTY_TYPES.BRIDE:
-      return "brides-party-bg";
-    default:
-      return "grooms-party-bg";
+      return {
+        background: "grooms-party-bg",
+        title: "grooms-party-title",
+      };
   }
 }
 
 function App() {
+  const classNames = getClassNames();
   return (
-    <div className={getBackgroundClassName()}>
-      <h1 className="App-title">Wedding Party</h1>
-      <h1 className="App-list">
+    <div className={classNames.background}>
+      <h1 className={classNames.title}>Wedding Party</h1>
+      <div className="App-list">
         {events.map((item, index) => (
-          <h1 key={index} item={item}>
+          <p key={index} item={item}>
             {item.title}
-          </h1>
+          </p>
         ))}
-      </h1>
+      </div>
     </div>
   );
 }
