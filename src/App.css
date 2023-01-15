@@ -1,12 +1,26 @@
 body {
-  background-color: black;
-  height:  100vh;
+  background-image: url("backgrounds/golden_champagne.jpeg");
+  background-color: #fff;
+  height: 100vh;
   overflow-y: hidden;
 }
-.App {
-  text-align: center;
-  justify-content: center;
-  background-color: #000;
+.brides-party-bg {
+  background-image: url("backgrounds/pink_champagne.jpeg");
+  background-color: #fff;
+  height: 100vh;
+  overflow-y: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.grooms-party-bg {
+  background-image: url("backgrounds/scotch_and_cigar.jpeg");
+  background-color: #fff;
+  height: 100vh;
+  overflow-y: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .App-Bg-Div {
@@ -25,10 +39,9 @@ body {
 }
 
 .App-title {
-  color: #B2AC88;
-  background-color: red;
+  color: #b2ac88;
   position: absolute;
-  font-family: 'Abril Fatface', cursive;
+  font-family: "Abril Fatface", cursive;
   text-align: left;
   top: 10vw;
   left: 10vw;
@@ -37,12 +50,11 @@ body {
 }
 
 .App-list {
-  background-color: green;
   position: absolute;
   text-align: left;
   top: 20vh;
-  left: 10vw;
-  right: 10vw;
+  left: 8px;
+  right: 8px;
   bottom: 10vw;
   overflow: scroll;
 }

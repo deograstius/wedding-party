@@ -50,20 +50,15 @@ function getBackground() {
 function getBackgroundClassName() {
   switch (WEDDING_PARTY) {
     case WEDDING_PARTY_TYPES.BRIDE:
-      return "poppy-App-bg";
+      return "brides-party-bg";
     default:
-      return "App-bg";
+      return "grooms-party-bg";
   }
 }
 
 function App() {
   return (
-    <div className="App-Bg-Div">
-      <img
-        src={getBackground()}
-        className={getBackgroundClassName()}
-        alt="bg"
-      />
+    <div className={getBackgroundClassName()}>
       <h1 className="App-title">Wedding Party</h1>
       <h1 className="App-list">
         {events.map((item, index) => (
