@@ -53,8 +53,6 @@ body {
   position: absolute;
   text-align: left;
   top: 20vh;
-  left: 8px;
-  right: 8px;
   bottom: 10vw;
   overflow: scroll;
 }
