@@ -5,7 +5,7 @@ body {
   overflow-y: hidden;
 }
 .brides-party-bg {
-  background-image: url(/static/media/pink_champagne.4a6739f8.jpeg);
+  background-image: url("backgrounds//pink_champagne.jpeg");
   background-color: #fff;
   height: 100vh;
   overflow-y: hidden;
