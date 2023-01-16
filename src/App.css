@@ -5,7 +5,7 @@ body {
   overflow-y: hidden;
 }
 .brides-party-bg {
-  background-image: url(/static/media/pink_champagne.4a6739f8.jpeg);
+  background-image: url("backgrounds//pink_champagne.jpeg");
   background-color: #fff;
   height: 100vh;
   overflow-y: hidden;
@@ -73,6 +73,11 @@ body {
   right: 5vw;
   bottom: 5vh;
   overflow: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.App-list::-webkit-scrollbar {
+  display: none;
 }
 
 .poppy-App-bg {

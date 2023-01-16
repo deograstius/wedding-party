@@ -95,7 +95,7 @@ const WEDDING_PARTY_TYPES = {
   BRIDE: 1,
 };
 
-const WEDDING_PARTY = WEDDING_PARTY_TYPES.BRIDE;
+const WEDDING_PARTY = WEDDING_PARTY_TYPES.GROOM;
 
 function getDynamicClassNames() {
   switch (WEDDING_PARTY) {
