@@ -71,6 +71,11 @@ body {
   top: 20vh;
   bottom: 10vw;
   overflow: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.App-list::-webkit-scrollbar {
+  display: none;
 }
 .poppy-App-bg {
   background-color: #000;
