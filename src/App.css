@@ -5,11 +5,11 @@ body {
   overflow-y: hidden;
 }
 .brides-party-bg {
-  background-image: url("backgrounds/pink_champagne.jpeg");
+  background-image: url(/static/media/pink_champagne.4a6739f8.jpeg);
   background-color: #fff;
   height: 100vh;
   overflow-y: hidden;
-  background-position: center;
+  background-position: -22px;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -18,12 +18,12 @@ body {
   background-color: #fff;
   height: 100vh;
   overflow-y: hidden;
-  background-position: center;
+  background-position: -610px;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.App-Bg-Div {
+.app-backgroundg-div {
   background-color: #000;
   color: white;
   overflow: hidden;
@@ -38,24 +38,40 @@ body {
   opacity: 0.5;
 }
 
-.App-title {
-  color: #b2ac88;
+.grooms-party-title {
+  color: #d3d3d3;
   position: absolute;
-  font-family: "Abril Fatface", cursive;
-  text-align: left;
-  top: 5vh;
-  left: 10vw;
-  right: 10vw;
+  font-weight: 400;
+  font-family: "Times New Roman", Times, serif;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100vw;
+  line-height: 1.21;
+  font-size: 48px;
   height: 10vh;
+  letter-spacing: normal;
+}
+
+.brides-party-title {
+  color: #4e4e4e;
+  position: absolute;
+  font-weight: 400;
+  font-family: "Snell Roundhand", cursive;
+  text-align: center;
+  width: 100vw;
+  line-height: 1.21;
+  font-size: 56px;
+  height: 10vh;
+  letter-spacing: normal;
 }
 
 .App-list {
   position: absolute;
   text-align: left;
-  top: 15vh;
-  left: 10vw;
-  right: 10vw;
-  bottom: 10vw;
+  top: 20vh;
+  left: 5vw;
+  right: 5vw;
+  bottom: 5vh;
   overflow: scroll;
 }
 
@@ -70,31 +86,33 @@ body {
 .App-cell {
   background-color: aquamarine;
   color: white;
-  width: 70vw;
+  width: 100%;
   height: 10vh;
   position: flex;
-  align-items: flex-start;
 }
 
 .App-cell-title {
   background-color: red;
-  width: 70vw;
-  height: 3vh;
+  width: 100%;
+  height: 2vh;
   font-size: small;
+  margin: 0ch;
 }
 
 .App-cell-desc {
   background-color: purple;
-  width: 70vw;
-  height: 3vh;
+  width: 100%;
+  height: 5vh;
   font-size: small;
+  margin: 0ch;
 }
 
 .App-cell-datetime {
   background-color: green;
-  width: 70vw;
+  width: 100%;
   height: 3vh;
   font-size: small;
+  margin: 0ch;
 }
 
 .App-link {

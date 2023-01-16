@@ -1,12 +1,58 @@
 import React, { useState } from "react";
 import background from "./backgrounds/tall_scotch_bottle.jpg";
-import groom_background from "./backgrounds/tall_scotch_bottle.jpg";
-import bride_background from "./backgrounds/champagne.jpg";
 import "./App.css";
 
 const TITLE = "Wedding Party";
 
 const events = [
+  {
+    key: 0,
+    title: "Lorem ipsum 1",
+    desc: "Lorem ipsum dolor sit amet",
+    time: "02-05-2023",
+  },
+  {
+    key: 1,
+    title: "Lorem ipsum 2",
+    desc: "Lorem ipsum dolor sit amet",
+    time: "02-05-2023",
+  },
+  {
+    key: 2,
+    title: "Lorem ipsum 3",
+    desc: "Lorem ipsum dolor sit amet",
+    time: "02-05-2023",
+  },
+  {
+    key: 3,
+    title: "Lorem ipsum 4",
+    desc: "Lorem ipsum dolor sit amet",
+    time: "02-05-2023",
+  },
+  {
+    key: 0,
+    title: "Lorem ipsum 1",
+    desc: "Lorem ipsum dolor sit amet",
+    time: "02-05-2023",
+  },
+  {
+    key: 1,
+    title: "Lorem ipsum 2",
+    desc: "Lorem ipsum dolor sit amet",
+    time: "02-05-2023",
+  },
+  {
+    key: 2,
+    title: "Lorem ipsum 3",
+    desc: "Lorem ipsum dolor sit amet",
+    time: "02-05-2023",
+  },
+  {
+    key: 3,
+    title: "Lorem ipsum 4",
+    desc: "Lorem ipsum dolor sit amet",
+    time: "02-05-2023",
+  },
   {
     key: 0,
     title: "Lorem ipsum 1",
@@ -51,34 +97,36 @@ const WEDDING_PARTY_TYPES = {
 
 const WEDDING_PARTY = WEDDING_PARTY_TYPES.BRIDE;
 
-function getBackground() {
+function getDynamicClassNames() {
   switch (WEDDING_PARTY) {
     case WEDDING_PARTY_TYPES.BRIDE:
-      return bride_background;
+      return {
+        background: "brides-party-bg",
+        title: "brides-party-title",
+      };
     default:
-      return groom_background;
+      return {
+        background: "grooms-party-bg",
+        title: "grooms-party-title",
+      };
   }
 }
 
-function getBackgroundClassName() {
-  switch (WEDDING_PARTY) {
-    case WEDDING_PARTY_TYPES.BRIDE:
-      return "brides-party-bg";
-    default:
-      return "grooms-party-bg";
-  }
+function getClassNames() {
+  return {
+    backgrounddiv: "app-backgroundg-div",
+    listView: "App-list",
+  };
 }
 
 function App() {
+  const dynamicclassNames = getDynamicClassNames();
+  const staticclassnames = getClassNames();
   return (
-    <div className="App-Bg-Div">
-      <img
-        src={getBackground()}
-        className={getBackgroundClassName()}
-        alt="bg"
-      />
-      <h1 className="App-title">{TITLE}</h1>
-      <div className="App-list">
+    <div className={dynamicclassNames.background}>
+      <img className={staticclassnames.backgrounddiv} alt="bg" />
+      <h1 className={dynamicclassNames.title}>{TITLE}</h1>
+      <div className={staticclassnames.listView}>
         {events.map((event, index) => (
           <Cell key={index} item={event}></Cell>
         ))}
