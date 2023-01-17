@@ -12,7 +12,7 @@ const WEDDING_PARTY_TYPES = {
 
 const WEDDING_PARTY = WEDDING_PARTY_TYPES.BRIDE;
 
-function getDynamicClassNames() {
+function getdynamicclassnames() {
   switch (WEDDING_PARTY) {
     case WEDDING_PARTY_TYPES.BRIDE:
       return {
@@ -22,6 +22,7 @@ function getDynamicClassNames() {
         cellTitle: "brides-cell-title",
         cellDesc: "brides-cell-desc",
         cellDateTime: "brides-cell-datetime",
+        contrastGradient: "brides-contrast-gradient",
       };
     default:
       return {
@@ -31,6 +32,7 @@ function getDynamicClassNames() {
         cellTitle: "grooms-cell-title",
         cellDesc: "grooms-cell-desc",
         cellDateTime: "grooms-cell-datetime",
+        contrastGradient: "grooms-contrast-gradient",
       };
   }
 }
@@ -39,17 +41,19 @@ function getClassNames() {
   return {
     backgrounddiv: "app-backgroundg-div",
     listView: "App-list",
+    cell: "App-cell",
     cellTitle: "App-cell-title",
     cellDesc: "App-cell-desc",
     cellDateTime: "App-cell-datetime",
+    contrastGradient: "contrast-gradient",
   };
 }
 
 function Cell(event) {
-  const dcn = getDynamicClassNames();
+  const dcn = getdynamicclassnames();
   const scn = getClassNames();
   return (
-    <div className={dcn.cell + " " + "App-cell"}>
+    <div className={dcn.cell + " " + scn.cell}>
       <h3 className={dcn.cellTitle + " " + scn.cellTitle}>
         {event.item.Event}
       </h3>
@@ -83,7 +87,7 @@ async function getLocalData() {
 
 function App() {
   const [events, setEvents] = useState([]);
-  const dynamicclassNames = getDynamicClassNames();
+  const dynamicclassnames = getdynamicclassnames();
   const staticclassnames = getClassNames();
 
   getLocalData().then((jsonData) => {
@@ -94,8 +98,9 @@ function App() {
   });
 
   return (
-    <div className={dynamicclassNames.background}>
-      <h1 className={dynamicclassNames.title}>{TITLE}</h1>
+    <div className={dynamicclassnames.background}>
+      <div className={dynamicclassnames.contrastGradient}></div>
+      <h1 className={dynamicclassnames.title}>{TITLE}</h1>
       <div className={staticclassnames.listView}>
         {events.map((event, index) => (
           <Cell key={index} item={event}></Cell>
