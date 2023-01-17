@@ -64,14 +64,10 @@ body {
 }
 
 .App-list {
-  /* position: absolute; */
   text-align: left;
-  /* top: 20vh;
-  left: 5vw;
-  right: 5vw;
-  bottom: 5vh; */
-  width: 80%;
+  width: 95vw;
   overflow: scroll;
+  margin-bottom: 1vh;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
@@ -88,27 +84,60 @@ body {
 }
 
 .App-cell {
-  background: rgba(86,94.5,80.5,0.35);
-  color: white;
   width: 100%;
   height: 12vh;
   padding: 0px;
   border-radius: 5px;
-  margin-top: 10px;
-  border-width: 1px;
-  border-color: rgba(172,189,161,0.6);
-  border-style: hidden hidden solid solid;
+  margin-top: 2.5vw;
 }
 
 .App-cell-title {
   background-color: transparent;
-  font-family: "Times New Roman", Times, serif;
   width: auto;
   height: auto;
+  max-height: 1.5vh;
   font-size: medium;
   text-overflow: ellipsis;
   margin: 2%;
   justify-content: center;
+}
+
+.grooms-cell {
+  background: rgba(86,94.5,80.5,0.2);
+  border-width: 1px;
+  border-color: rgba(172,189,161,0.4);
+  border-style: hidden hidden solid solid;
+}
+.grooms-cell-title {
+  font-family: "Times New Roman", Times, serif;
+  color: white;
+}
+.grooms-cell-desc {
+  font-family: "Times New Roman", Times, serif;
+  color: white;
+}
+.grooms-cell-datetime {
+  font-family: "Times New Roman", Times, serif;
+  color: white;
+}
+
+.brides-cell {
+  background: rgba(231,236,228,0.6);
+  border-width: 1px;
+  border-color: rgba(255,255,255,1);
+  border-style: solid solid hidden hidden;
+}
+.brides-cell-title {
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+}
+.brides-cell-desc {
+  font-family: "Times New Roman", Times, serif;
+  color: #070906;
+}
+.brides-cell-datetime {
+  font-family: "Times New Roman", Times, serif;
+  color: black;
 }
 
 .App-cell-desc {

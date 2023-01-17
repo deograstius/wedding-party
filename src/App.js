@@ -5,87 +5,12 @@ import * as eventData from "./data/EventData.xlsx";
 
 const TITLE = "Wedding Party";
 
-// const events = [
-//   {
-//     key: 0,
-//     title: "Lorem ipsum 1",
-//     desc: "Lorem ipsum dolor sit amet",
-//     time: "02-05-2023",
-//   },
-//   {
-//     key: 1,
-//     title: "Lorem ipsum 2",
-//     desc: "Lorem ipsum dolor sit amet",
-//     time: "02-05-2023",
-//   },
-//   {
-//     key: 2,
-//     title: "Lorem ipsum 3",
-//     desc: "Lorem ipsum dolor sit amet",
-//     time: "02-05-2023",
-//   },
-//   {
-//     key: 3,
-//     title: "Lorem ipsum 4",
-//     desc: "Lorem ipsum dolor sit amet",
-//     time: "02-05-2023",
-//   },
-//   {
-//     key: 0,
-//     title: "Lorem ipsum 1",
-//     desc: "Lorem ipsum dolor sit amet",
-//     time: "02-05-2023",
-//   },
-//   {
-//     key: 1,
-//     title: "Lorem ipsum 2",
-//     desc: "Lorem ipsum dolor sit amet",
-//     time: "02-05-2023",
-//   },
-//   {
-//     key: 2,
-//     title: "Lorem ipsum 3",
-//     desc: "Lorem ipsum dolor sit amet",
-//     time: "02-05-2023",
-//   },
-//   {
-//     key: 3,
-//     title: "Lorem ipsum 4",
-//     desc: "Lorem ipsum dolor sit amet",
-//     time: "02-05-2023",
-//   },
-//   {
-//     key: 0,
-//     title: "Lorem ipsum 1",
-//     desc: "Lorem ipsum dolor sit amet",
-//     time: "02-05-2023",
-//   },
-//   {
-//     key: 1,
-//     title: "Lorem ipsum 2",
-//     desc: "Lorem ipsum dolor sit amet",
-//     time: "02-05-2023",
-//   },
-//   {
-//     key: 2,
-//     title: "Lorem ipsum 3",
-//     desc: "Lorem ipsum dolor sit amet",
-//     time: "02-05-2023",
-//   },
-//   {
-//     key: 3,
-//     title: "Lorem ipsum 4",
-//     desc: "Lorem ipsum dolor sit amet",
-//     time: "02-05-2023",
-//   },
-// ];
-
 const WEDDING_PARTY_TYPES = {
   GROOM: 0,
   BRIDE: 1,
 };
 
-const WEDDING_PARTY = WEDDING_PARTY_TYPES.GROOM;
+const WEDDING_PARTY = WEDDING_PARTY_TYPES.BRIDE;
 
 function getDynamicClassNames() {
   switch (WEDDING_PARTY) {
@@ -93,11 +18,19 @@ function getDynamicClassNames() {
       return {
         background: "brides-party-bg",
         title: "brides-party-title",
+        cell: "brides-cell",
+        cellTitle: "brides-cell-title",
+        cellDesc: "brides-cell-desc",
+        cellDateTime: "brides-cell-datetime",
       };
     default:
       return {
         background: "grooms-party-bg",
         title: "grooms-party-title",
+        cell: "grooms-cell",
+        cellTitle: "grooms-cell-title",
+        cellDesc: "grooms-cell-desc",
+        cellDateTime: "grooms-cell-datetime",
       };
   }
 }
@@ -106,16 +39,26 @@ function getClassNames() {
   return {
     backgrounddiv: "app-backgroundg-div",
     listView: "App-list",
+    cellTitle: "App-cell-title",
+    cellDesc: "App-cell-desc",
+    cellDateTime: "App-cell-datetime",
   };
 }
 
 function Cell(event) {
-  console.log(event.item);
+  const dcn = getDynamicClassNames();
+  const scn = getClassNames();
   return (
-    <div className="App-cell">
-      <h3 className="App-cell-title">{event.item.Event}</h3>
-      <p className="App-cell-desc">{event.item.Description}</p>
-      <p className="App-cell-datetime">{event.item.DateTilme}</p>
+    <div className={dcn.cell + " " + "App-cell"}>
+      <h3 className={dcn.cellTitle + " " + scn.cellTitle}>
+        {event.item.Event}
+      </h3>
+      <p className={dcn.cellDesc + " " + scn.cellDesc}>
+        {event.item.Description}
+      </p>
+      <p className={dcn.cellDateTime + " " + scn.cellDateTime}>
+        {event.item.DateTilme}
+      </p>
     </div>
   );
 }
@@ -145,7 +88,7 @@ function App() {
 
   getLocalData().then((jsonData) => {
     if (events.length === 0) {
-      console.log(jsonData);
+      // console.log(jsonData);
       setEvents(jsonData);
     }
   });
