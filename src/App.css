@@ -12,6 +12,9 @@ body {
   background-position: -22px;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .grooms-party-bg {
   background-image: url("backgrounds/scotch_and_cigar.jpeg");
@@ -21,12 +24,9 @@ body {
   background-position: -610px;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.app-backgroundg-div {
-  background-color: #000;
-  color: white;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .App-bg {
@@ -40,7 +40,6 @@ body {
 
 .grooms-party-title {
   color: #d3d3d3;
-  position: absolute;
   font-weight: 400;
   font-family: "Times New Roman", Times, serif;
   text-transform: uppercase;
@@ -48,30 +47,30 @@ body {
   width: 100vw;
   line-height: 1.21;
   font-size: 48px;
-  height: 10vh;
+  height: fit-content;
   letter-spacing: normal;
 }
 
 .brides-party-title {
   color: #4e4e4e;
-  position: absolute;
   font-weight: 400;
   font-family: "Snell Roundhand", cursive;
   text-align: center;
   width: 100vw;
   line-height: 1.21;
   font-size: 56px;
-  height: 10vh;
+  height: fit-content;
   letter-spacing: normal;
 }
 
 .App-list {
-  position: absolute;
+  /* position: absolute; */
   text-align: left;
-  top: 20vh;
+  /* top: 20vh;
   left: 5vw;
   right: 5vw;
-  bottom: 5vh;
+  bottom: 5vh; */
+  width: 80%;
   overflow: scroll;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -89,46 +88,47 @@ body {
 }
 
 .App-cell {
-  background-color: aquamarine;
+  background: rgba(86,94.5,80.5,0.35);
   color: white;
   width: 100%;
-  height: 10vh;
-  position: flex;
+  height: 12vh;
+  padding: 0px;
+  border-radius: 5px;
+  margin-top: 10px;
+  border-width: 1px;
+  border-color: rgba(172,189,161,0.6);
+  border-style: hidden hidden solid solid;
 }
 
 .App-cell-title {
-  background-color: red;
-  width: 100%;
-  height: 2vh;
-  font-size: small;
-  margin: 0ch;
+  background-color: transparent;
+  font-family: "Times New Roman", Times, serif;
+  width: auto;
+  height: auto;
+  font-size: medium;
+  text-overflow: ellipsis;
+  margin: 2%;
+  justify-content: center;
 }
 
 .App-cell-desc {
-  background-color: purple;
-  width: 100%;
-  height: 5vh;
+  background-color: transparent;
+  width: auto;
+  height: fit-content;
+  max-height: 6vh;
   font-size: small;
-  margin: 0ch;
+  margin: 2%;
 }
 
 .App-cell-datetime {
-  background-color: green;
-  width: 100%;
-  height: 3vh;
+  background-color: transparent;
+  width: auto;
+  height: auto;
   font-size: small;
-  margin: 0ch;
+  margin: 2%;
+  text-overflow: ellipsis;
 }
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
