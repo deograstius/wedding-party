@@ -49,7 +49,6 @@ body {
   font-size: 48px;
   height: fit-content;
   letter-spacing: normal;
-  z-index: 4;
 }
 
 .brides-party-title {
@@ -62,7 +61,6 @@ body {
   font-size: 56px;
   height: fit-content;
   letter-spacing: normal;
-  z-index: 4;
 }
 
 .App-list {
@@ -72,7 +70,6 @@ body {
   margin-bottom: 1vh;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-  z-index: 4;
 }
 .App-list::-webkit-scrollbar {
   display: none;
@@ -161,26 +158,6 @@ body {
   text-overflow: ellipsis;
 }
 
-.brides-contrast-gradient {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(90deg, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 100%);
-  flex-direction: column;
-  align-items: center;
-  z-index: 3;
-}
-
-.grooms-contrast-gradient {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(0deg, rgba(0,0,0,0.7) 10%, rgba(0,0,0,0) 100%);
-  flex-direction: column;
-  align-items: center;
-  z-index: 3;
+.App-link {
+  color: #61dafb;
 }
