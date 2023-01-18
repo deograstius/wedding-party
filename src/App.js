@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
 import * as XLSX from "xlsx";
-import * as eventData from "./data/EventData.xlsx";
+import * as grooms_data from "./data/grooms_data.xlsx";
+import * as brides_data from "./data/brides_data.xlsx";
 
 const TITLE = "Wedding Party";
 
@@ -10,7 +11,16 @@ const WEDDING_PARTY_TYPES = {
   BRIDE: 1,
 };
 
-const WEDDING_PARTY = WEDDING_PARTY_TYPES.BRIDE;
+const WEDDING_PARTY = WEDDING_PARTY_TYPES.GROOM;
+
+function getData() {
+  switch (WEDDING_PARTY) {
+    case WEDDING_PARTY_TYPES.BRIDE:
+      return brides_data;
+    default:
+      return grooms_data;
+  }
+}
 
 function getDynamicClassNames() {
   switch (WEDDING_PARTY) {
@@ -63,15 +73,15 @@ function Cell(event) {
   );
 }
 
-async function getLocalData() {
+async function getLocalData(data) {
   return new Promise((resolve, reject) => {
-    fetch(eventData)
+    fetch(data)
       .then((resp) => resp.arrayBuffer())
       .then((buff) => {
-        var workbook = XLSX.read(buff);
+        const workbook = XLSX.read(buff);
         const wsname = workbook.SheetNames[0];
         const ws = workbook.Sheets[wsname];
-        var jsonData = XLSX.utils.sheet_to_json(ws);
+        const jsonData = XLSX.utils.sheet_to_json(ws);
         resolve(jsonData);
       })
       .catch((err) => {
@@ -86,9 +96,8 @@ function App() {
   const dynamicclassNames = getDynamicClassNames();
   const staticclassnames = getClassNames();
 
-  getLocalData().then((jsonData) => {
+  getLocalData(getData()).then((jsonData) => {
     if (events.length === 0) {
-      // console.log(jsonData);
       setEvents(jsonData);
     }
   });
