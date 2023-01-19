@@ -72,11 +72,18 @@ function Cell(event) {
         <p className={dcn.cellDesc + " " + scn.cellDesc}>
           {event.item.Description}
         </p>
-        {event.item.DateTime !== undefined && (
-          <p className={dcn.cellDateTime + " " + scn.cellDateTime}>
-            {event.item.DateTime}
-          </p>
-        )}
+        <div className="cell-footer">
+          {event.item.DateTime !== undefined && (
+            <p className={dcn.cellDateTime + " " + scn.cellDateTime}>
+              {event.item.DateTime}
+            </p>
+          )}
+          {event.item.Link !== undefined && (
+            <a href={event.item.Link} className="cell-link">
+              Link
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );
