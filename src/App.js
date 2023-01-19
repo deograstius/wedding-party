@@ -4,7 +4,7 @@ import * as XLSX from "xlsx";
 import * as grooms_data from "./data/grooms_data.xlsx";
 import * as brides_data from "./data/brides_data.xlsx";
 
-const TITLE = "Wedding Party";
+const TITLE = "What Now?";
 
 const WEDDING_PARTY_TYPES = {
   GROOM: 0,
@@ -60,15 +60,24 @@ function Cell(event) {
   const scn = getClassNames();
   return (
     <div className={dcn.cell + " " + "App-cell"}>
-      <h3 className={dcn.cellTitle + " " + scn.cellTitle}>
-        {event.item.Event}
-      </h3>
-      <p className={dcn.cellDesc + " " + scn.cellDesc}>
-        {event.item.Description}
-      </p>
-      <p className={dcn.cellDateTime + " " + scn.cellDateTime}>
-        {event.item.DateTilme}
-      </p>
+      <img
+        src={event.item.Image}
+        className="cell-image"
+        alt={event.item.Event}
+      />
+      <div className="cell-content">
+        <h3 className={dcn.cellTitle + " " + scn.cellTitle}>
+          {event.item.Event}
+        </h3>
+        <p className={dcn.cellDesc + " " + scn.cellDesc}>
+          {event.item.Description}
+        </p>
+        {event.item.DateTime !== undefined && (
+          <p className={dcn.cellDateTime + " " + scn.cellDateTime}>
+            {event.item.DateTime}
+          </p>
+        )}
+      </div>
     </div>
   );
 }

@@ -4,8 +4,11 @@ body {
   height: 100vh;
   overflow-y: hidden;
 }
+h1 {
+  margin-bottom: 0px;
+}
 .brides-party-bg {
-  background-image: url("backgrounds//pink_champagne.jpeg");
+  background-image: url("backgrounds/pink_champagne.jpeg");
   background-color: #fff;
   height: 100vh;
   overflow-y: hidden;
@@ -74,6 +77,22 @@ body {
 .App-list::-webkit-scrollbar {
   display: none;
 }
+.cell-content {
+  display: inline-block;
+  height: 100%;
+  width: 66%;
+}
+.cell-image {
+  display: inline-block;
+  width: 33%;
+  background: transparent;
+  background-image: url("backgrounds/place_holder.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 3px;
+  background-position: center;
+  object-fit: cover;
+}
 
 .poppy-App-bg {
   background-color: #000;
@@ -85,17 +104,19 @@ body {
 
 .App-cell {
   width: 100%;
-  height: 12vh;
-  padding: 0px;
+  height: fit-content;
+  padding: 2%;
   border-radius: 5px;
   margin-top: 2.5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .App-cell-title {
   background-color: transparent;
   width: auto;
   height: auto;
-  max-height: 1.5vh;
   font-size: medium;
   text-overflow: ellipsis;
   margin: 2%;
@@ -144,9 +165,9 @@ body {
   background-color: transparent;
   width: auto;
   height: fit-content;
-  max-height: 6vh;
   font-size: small;
   margin: 2%;
+  display: block;
 }
 
 .App-cell-datetime {
@@ -154,8 +175,10 @@ body {
   width: auto;
   height: auto;
   font-size: small;
-  margin: 2%;
+  margin: 0;
   text-overflow: ellipsis;
+  padding: 2% 2% 0 2%;
+  display: block;
 }
 
 .App-link {
