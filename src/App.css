@@ -125,7 +125,13 @@ h1 {
   justify-content: space-between;
 }
 
-.cell-link {
+.brides-link {
+  margin-left: 2%;
+  color: maroon;
+  font-size: medium;
+}
+
+.grooms-link {
   margin-left: 2%;
   color: lightblue;
   font-size: medium;

@@ -32,6 +32,7 @@ function getDynamicClassNames() {
         cellTitle: "brides-cell-title",
         cellDesc: "brides-cell-desc",
         cellDateTime: "brides-cell-datetime",
+        cellLink: "brides-link",
       };
     default:
       return {
@@ -41,6 +42,7 @@ function getDynamicClassNames() {
         cellTitle: "grooms-cell-title",
         cellDesc: "grooms-cell-desc",
         cellDateTime: "grooms-cell-datetime",
+        cellLink: "grooms-link",
       };
   }
 }
@@ -79,7 +81,7 @@ function Cell(event) {
             </p>
           )}
           {event.item.Link !== undefined && (
-            <a href={event.item.Link} className="cell-link">
+            <a href={event.item.Link} className={dcn.cellLink}>
               Link
             </a>
           )}
