@@ -127,6 +127,7 @@ function App() {
         {events.map((event, index) => (
           <Cell key={index} item={event}></Cell>
         ))}
+        <div className="bottom-spacer"></div>
       </div>
     </div>
   );
